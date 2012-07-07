@@ -1,2 +1,152 @@
-h1= title
-p Welcome to #{title}
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      .nav-collapse
+        ul.nav
+          li
+            a(href='#home') home
+          li
+            a(href='#services') services
+          li
+            a(href='#profile') profile
+          li
+            a(href='#contact') contact
+
+.header
+  .container.logo.hide-text
+    = title
+
+section#top
+  .container
+    table.table.table-striped.table-bordered
+      tr
+        td Do you think that in today's world, it is enough to keep pace with others on the treadmill of progress and risk getting marginalized in this extremely competitive outsourcing space? Or, would you rather stay ahead of the curve!
+      tr
+        td Do you believe that critical to success is seamless service delivery and sustained adherence to SLA metrics?
+      tr
+        td Are you convinced that if a Rupee added to your client's bottom line is worth several to yours then, getting closer to client's core businesses is the key to the kingdom?
+      tr
+        td Would you like to stay ahead in the game by just keeping your top talent or by bringing out the best in your high potential people?
+      tr
+        td How can you keep them highly engaged, through recognition, individual attention and emphasis on the need for developing future competencies?
+      tr
+        td Are we content being just efficient fence sitters or rather be effective and provide direction and support by walking the talk and usher in a collaborative work culture that brings out the individual best in every team member for collective gain?
+      tr
+        td That is where we at V R Consultants step in. We ensure that your operations are a seamless extension of your client's operations. We help you in your ability and flexibility to scale. We help manage credit judiciously. We emphasize in building relationships and sharing trust. We assist through leadership motivation, coaching and personal development. We partner by acting as a catalyst for your success!
+
+section#services
+  .container
+    h1 Services
+    .row.services
+      .span3
+        .clearfix
+          img.pull-right(src='images/graph.png', alt='Graph')
+          h3 Performance Management
+        ul.unstyled
+          li Help use Lean efforts to reduce costs, enhance productivity, improve service levels and thereby increase profits and growth.
+          li Understanding customer's changing needs, identify opportunities and design specific pricing strategy.
+          li Bring-in and sustain a periodic review process using balance score card as a work culture.
+          li Address critical challenges and optimize shared services functions.
+      .span3
+        .clearfix
+          img.pull-right(src='images/people.png', alt='People')
+          h3 People Power &amp; Development
+        ul.unstyled
+          li Build and foster team work, help in promoting open communications through appropriate committees and task forces.
+          li Provide an approach to planned development process towards succession for all critical positions.
+          li Promote human resources development through various initiatives, both group development and individual development through training and coaching &amp; mentoring.
+          li Jointly conduct review and implement appropriate organizational structures and systems &amp; processes.
+      .span3
+        .clearfix
+          img.pull-right(src='images/piechart.png', alt='Piechart')
+          h3 Customer Relations, Marketing &amp; Business Strategy
+        ul.unstyled
+          li Engage customers through better delivery of services and enhance existing customer relationships.
+          li New customer acquisitions, business contracts negotiation with existing and new customers.
+          li Developing short term, medium term and long term corporate business goals.
+          li Mergers, alliances and acquisitions - we provide integration planning and post-merger integration services.
+      .span3
+        .clearfix
+          img.pull-right(src='images/survey.png', alt='Survey')
+          h3 Compliances and Business Continuity
+        ul.unstyled
+          li Compliance against requirements of HIPAA &amp; GLBA in Healthcare accounts.
+          li Business Continuity Plans - Conceptualize, Design, Documentation and Testing.
+
+section#profile
+  .container
+    h1 Profile
+    p Rao, as Viswanath R Rao is more familiarly known amongst clients and colleagues in the Industry circles, worked as Executive Vice President &amp; India geography Head while at Hinduja Global Solutions, Bangalore, which is a premier 3rd party provider of BPO services.
+    p He was amongst the first few to have joined HGS (formerly ALIT) when it transitioned itself from an IT company to providers of IT enabled services in the year 2000. He was responsible for initial success in transitioning the first US healthcare level III data/claims transaction processing. In the last 11 years of his association with HGS, the company expanded its basket of services to include both Data &amp; Voice for International and Domestic clients with its footprint in 6 countries.
+    p From pilot study to full scale operations, his role included transitioning, productivity enhancement, business excellence and training, scaling up to manage large (1,200 executives) to very large (7,500 executives) individual accounts, cost optimization, HR, client relationship management and business development. Rao has been closely involved in all aspects of managing the manufacturing/project engineering, outsourcing businesses for telecom/financial services/healthcare and retail industry in the last 30 years of work experience.
+    p His initial 20 years of industry experience started at organizations like ABB Ltd. (Flakt India Ltd.). His role started with indigenization of Swedish Technology in bulk pneumatic handling of cement and fly-ash from PF coal-fired boilers. After successfully demonstrating a prototype in a cement plant, he moved to pre &amp; post sales and project management of the complete range of air pollution control equipment and its downstream pneumatic conveying system.
+    p As head of an SBU, while at Kirloskar AAF Ltd., he was responsible from concept to commissioning of the electrostatic precipitator division for cement, power and steel plants across the country. The job included design &amp; engineering, manufacture, vendor development &amp; procurement, delivery, installation, commissioning, testing and handing over of engineering projects in pollution control.
+    p Managing multiple projects which included civil, mechanical and electrical, Rao honed his skills in operations and project management besides sharpening his skills in man management, dealing with a wide cross-section of people coming from different regions of India with diverse cultural background, languages and behavior.
+    p On the academic front, Rao obtained his Chemical Engineering degree from NIT, Trichy in 1981. He pursued his academic interest during the latter part of his career and holds a certificate in Executive General Management Program from IIM - Bangalore. Coupled with his rich industry experience of over three decades, he has now stepped back to assist the business challenges facing the industry. He has decided to partner with his clients and be catalysts in building ASK - Attitude, Skill and Knowledge through three T's - Truth, Trust and Thrift.
+
+section#contact
+  .container
+    h1 Contact
+    .row
+      .span6
+        form
+          .control-group
+            label.control-label
+              | Name
+              input#input01.span5(type='text')
+          .control-group
+            label.control-label
+              | Email
+              input#input02.span5(type='text')
+          .control-group
+            label.control-label
+              | Message
+              textarea#input03.span5(rows='5')
+          button.btn.btn-primary(type='submit')
+            | Submit
+      .span6
+        address
+          h2 Viswanath R Rao
+          p Consultant
+        address
+          p
+            img(src='images/email.png')
+            a(href='mailto:viswanath.rao@vrconsultants.net') viswanath.rao@vrconsultants.net
+          p
+            img(src='images/phone.png')
+            | +91 98451 76124
+          p
+            img(src='images/telephone.png')
+            | +91 80 2632 1442
+          p
+            button#qrcode.btn(rel='popover') QR Code
+
+footer
+  .container
+    .row
+      .span6
+        h3 VR Consultants
+        p &copy; 2011 - 2012
+      .span6.social
+        a(href='http://www.facebook.com/viswanath.rao')
+          img(src='images/facebook.png', alt='Facebook Icon')
+        a(href='http://in.linkedin.com/pub/viswanath-r-rao/4/799/163')
+          img(src='images/linkedin.png', alt='Linkedin Icon')
+        a(href='http://viswanathrao.blogspot.com')
+          img(src='images/blogger.png', alt='Blogger Icon')
+
+script(src="javascripts/jquery.js")
+script(src="javascripts/bootstrap.min.js")
+script(src="javascripts/jquery.smooth-scroll.min.js")
+script
+  $(function() {
+    $('.navbar a').smoothScroll({ offset: -5 });
+    $('#qrcode').popover({
+      title: 'QR Code',
+      content: '<img src="images/qrcode2.png" />'
+    });
+  });

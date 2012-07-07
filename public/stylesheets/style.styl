@@ -1,5 +1,144 @@
+body-font = 15px 'PT Sans', 'Calibri', sans-serif
+header-font = 40px 'Cuprum', 'Segoe UI', sans-serif
+
+content-header-settings()
+  font-weight normal
+  margin-bottom 10px
+
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-a
-  color: #00B7FF
+  background-image url(../images/background_white.jpg)
+  background-color #f5f5f5
+  font body-font
+  line-height 22px
+
+section
+  padding 60px 0
+  h1
+    font header-font
+    text-shadow 1px 1px 0 #fff
+    padding-bottom 30px
+    color #003244
+    letter-spacing -1px
+
+#contact
+  background-image url(../images/background_checks.jpg)
+
+#services
+  background-image url(../images/background_lines.jpg)
+  h1
+    content-header-settings()
+  h3
+    font-family 'PT Sans Narrow', 'Calibri', sans-serif
+    font-weight normal
+  ul
+    padding-bottom 20px
+    li
+      margin-top 22px
+      font body-font
+
+#top
+  p
+    font body-font
+    line-height 22px
+
+#profile
+  h1
+    content-header-settings()
+  p
+    font body-font
+    line-height 22px
+    text-align justify
+    margin 0 0 14px
+
+#contact
+  h1
+    content-header-settings()
+  address
+    strong
+      font-size 20px
+      display block
+    img
+      margin-right 5px
+    p
+      padding 5px 0 5px 0
+      font-size 14px
+
+footer
+  font body-font
+  h3
+    font-weight normal
+
+.logo
+  background-image url(../images/logo.png)
+  background-repeat no-repeat
+  height 150px
+  margin-top 40px
+
+.navbar-inner
+  background none
+  filter none
+  box-shadow none
+  background-color #003244
+
+.nav-collapse
+  float right
+
+.navbar
+  .nav
+    a
+      text-transform lowercase
+      font-size 18px
+      font-family 'PT Sans', 'Calibri', sans-serif
+    > li
+      > a
+        color #e5e5e5
+    .active
+      > a
+      > a:hover
+        background none
+        color #fff
+
+.form-actions
+  background none
+  border none
+
+.table
+  td
+    padding 20px
+
+.table-striped
+  tbody
+    tr:nth-child(2n+1)
+      td
+      tr
+        background-image url(../images/background_lines.jpg)
+
+.input-prepend
+  .add-on
+    line-height 24px
+
+.popover-inner
+  width auto
+
+textarea
+  width 388px
+
+.social
+  text-align right
+  padding-top 10px
+  a
+    text-decoration none
+
+@media (max-width: 979px)
+  .navbar-fixed-top
+    position static
+    margin-bottom 0
+
+  .logo
+    margin-top 0
+
+  .nav-collapse
+    float none
+
+  section
+    padding 30px 0
