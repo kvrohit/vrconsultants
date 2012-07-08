@@ -20,8 +20,23 @@ section
     color #003244
     letter-spacing -1px
 
+p.help-block
+  font-style italic
+  color #aaa
+
 #contact
   background-image url(../images/background_checks.jpg)
+  h1
+    content-header-settings()
+  address
+    strong
+      font-size 20px
+      display block
+    img
+      margin-right 5px
+    p
+      padding 5px 0 5px 0
+      font-size 14px
 
 #services
   background-image url(../images/background_lines.jpg)
@@ -49,19 +64,6 @@ section
     line-height 22px
     text-align justify
     margin 0 0 14px
-
-#contact
-  h1
-    content-header-settings()
-  address
-    strong
-      font-size 20px
-      display block
-    img
-      margin-right 5px
-    p
-      padding 5px 0 5px 0
-      font-size 14px
 
 footer
   font body-font
@@ -128,6 +130,10 @@ textarea
   padding-top 10px
   a
     text-decoration none
+
+#contact-form
+  u.form-error
+    display none !important
 
 @media (max-width: 979px)
   .navbar-fixed-top

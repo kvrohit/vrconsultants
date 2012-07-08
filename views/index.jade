@@ -20,6 +20,14 @@
   .container.logo.hide-text
     = title
 
+- if(flash.success)
+  .container
+    .alert.alert-success #{flash.success}
+
+- if(flash.error)
+  .container
+    .alert.alert-error #{flash.error}
+
 section#top
   .container
     table.table.table-striped.table-bordered
@@ -93,21 +101,26 @@ section#contact
     h1 Contact
     .row
       .span6
-        form
+        form#contact-form(method='post', action='.')
           .control-group
-            label.control-label
-              | Name
-              input#input01.span5(type='text')
+            label.control-label(for='username') Name
+            .controls
+              input#username.span5(type='text', name='username', required='required')
+              p.help-block Required
           .control-group
-            label.control-label
-              | Email
-              input#input02.span5(type='text')
+            label.control-label(for='email') Email
+            .controls
+              input#email.span5(type='email', name='email', required='required')
+              p.help-block Required. Will not be shared!
           .control-group
-            label.control-label
-              | Message
-              textarea#input03.span5(rows='5')
-          button.btn.btn-primary(type='submit')
-            | Submit
+            label.control-label(for='message') Message
+            .controls
+              textarea#message.span5(rows='5', required='required', name='message')
+              p.help-block Required
+          .control-group
+            != recaptcha_form
+          .control-group
+            input.btn.btn-primary(type='submit')
       .span6
         address
           h2 Viswanath R Rao
@@ -142,11 +155,39 @@ footer
 script(src="javascripts/jquery.js")
 script(src="javascripts/bootstrap.min.js")
 script(src="javascripts/jquery.smooth-scroll.min.js")
+script(src="javascripts/jquery.validate.min.js")
 script
   $(function() {
     $('.navbar a').smoothScroll({ offset: -5 });
     $('#qrcode').popover({
       title: 'QR Code',
       content: '<img src="images/qrcode2.png" />'
+    });
+
+    // Validation plugin settings
+    $('#contact-form').validate({
+      rules: {
+        username: {
+          minlength: 2,
+          required: true
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        message: {
+          minlength: 2,
+          required: true
+        }
+      },
+      highlight: function(element) {
+        $(element).closest('.control-group').addClass('error');
+      },
+      success: function(element) {
+        element
+          .closest('.control-group').removeClass('error');
+      },
+      errorElement: 'u',
+      errorClass: 'form-error'
     });
   });
