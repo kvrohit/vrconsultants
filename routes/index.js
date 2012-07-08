@@ -30,13 +30,14 @@ var renderIndex = function(req, res, recaptcha) {
 
 sendmail = function(data) {
   server.send({
-     text:    data.message,
-     from:    data.username + "<" + data.email + ">",
-     to:      "rohit <kvrohit@gmail.com>",
-     subject: "Enquery from " + data.username
-  }, function(err, message) { console.log(err || message); });
+    text:    data.message,
+    from:    data.username + "<" + data.email + ">",
+    to:      "rohit <kvrohit@gmail.com>",
+    subject: "Enquery from " + data.username
+  }, function(err, message) {
+    console.log(err || message);
+  });
 };
-
 
 /*
  * GET home page.
@@ -64,7 +65,7 @@ exports.sendmessage = function(req, res) {
     message: ent.encode(req.body.message)
   };
 
-  console.log(messageData);
+  // console.log(messageData);
 
   var recaptcha = new Recaptcha(PUBLIC_KEY, PRIVATE_KEY, data);
 
