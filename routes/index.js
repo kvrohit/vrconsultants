@@ -7,7 +7,7 @@ var PUBLIC_KEY = '6Lfrv9MSAAAAADbIfJN1HmYX28RthdxgOINzKeYV',
 
 var server = email.server.connect({
   user: 'kvrohit',
-  password: 'C4t41yst1987',
+  password: 'xxxxxxxxx',
   host: 'smtp.gmail.com',
   ssl: true
 });
