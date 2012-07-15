@@ -1,15 +1,16 @@
-var email = require('emailjs/email')
-    , ent = require('ent')
-    , Recaptcha = require('recaptcha').Recaptcha;
+var ent = require('ent'),
+    Recaptcha = require('recaptcha').Recaptcha,
+    nodemailer = require("nodemailer");
 
 var PUBLIC_KEY = '6Lfrv9MSAAAAADbIfJN1HmYX28RthdxgOINzKeYV',
     PRIVATE_KEY = '6Lfrv9MSAAAAAGD7BEuMF_WcaJBwyHhFyAsxaC0-';
 
-var server = email.server.connect({
-  user: 'kvrohit',
-  password: 'xxxxxxxxx',
-  host: 'smtp.gmail.com',
-  ssl: true
+var smtpTransport = nodemailer.createTransport("SMTP",{
+  service: "Gmail",
+  auth: {
+    user: "vrconsultants.net@gmail.com",
+    pass: new Buffer('eGptZTY2ODg=', 'base64').toString('ascii')
+  }
 });
 
 /*
@@ -28,14 +29,21 @@ var renderIndex = function(req, res, recaptcha) {
  * Send mail
  */
 
-sendmail = function(data) {
-  server.send({
-    text:    data.message,
-    from:    data.username + "<" + data.email + ">",
-    to:      "rohit <kvrohit@gmail.com>",
-    subject: "Enquery from " + data.username
-  }, function(err, message) {
-    console.log(err || message);
+var sendmail = function(data) {
+  smtpTransport.sendMail({
+    from: "Administrator <vrconsultants.net@gmail.com>",
+    to: "Viswanath R Rao <viswanath.rao@vrconsultants.net>",
+    replyTo: data.username + " <" + data.email + ">",
+    subject: "Enquery from " + data.username,
+    text: data.message
+  }, function(error, response) {
+    if(error) {
+      console.log(error);
+    } else {
+      console.log("Message sent: " + response.message);
+    }
+    // if you don't want to use this transport object anymore, uncomment following line
+    //smtpTransport.close(); // shut down the connection pool, no more messages
   });
 };
 
@@ -81,4 +89,3 @@ exports.sendmessage = function(req, res) {
     }
   });
 };
-

@@ -27,13 +27,14 @@ app.configure('development', function(){
 });
 
 app.configure('production', function(){
+  app.enable('google-analytics');
   app.use(express.errorHandler());
 });
 
 // Routes
-
 app.get('/', routes.index);
 app.post('/', routes.sendmessage);
+app.get('/index.html', routes.index);
 
 // Port settings, required by heroku
 var port = process.env.PORT || 3000;
