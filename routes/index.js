@@ -2,14 +2,14 @@ var ent = require('ent'),
     Recaptcha = require('recaptcha').Recaptcha,
     nodemailer = require("nodemailer");
 
-var PUBLIC_KEY = '6Lfrv9MSAAAAADbIfJN1HmYX28RthdxgOINzKeYV',
-    PRIVATE_KEY = '6Lfrv9MSAAAAAGD7BEuMF_WcaJBwyHhFyAsxaC0-';
+var PUBLIC_KEY = 'PUBLIC_KEY',
+    PRIVATE_KEY = 'PRIVATE_KEY';
 
 var smtpTransport = nodemailer.createTransport("SMTP",{
   service: "Gmail",
   auth: {
-    user: "vrconsultants.net@gmail.com",
-    pass: new Buffer('eGptZTY2ODg=', 'base64').toString('ascii')
+    user: "username",
+    pass: "password"
   }
 });
 
@@ -31,8 +31,8 @@ var renderIndex = function(req, res, recaptcha) {
 
 var sendmail = function(data) {
   smtpTransport.sendMail({
-    from: "Administrator <vrconsultants.net@gmail.com>",
-    to: "Viswanath R Rao <viswanath.rao@vrconsultants.net>",
+    from: "from@example.com",
+    to: "to@example.com",
     replyTo: data.username + " <" + data.email + ">",
     subject: "Enquery from " + data.username,
     text: data.message
