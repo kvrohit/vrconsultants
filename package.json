@@ -7,7 +7,7 @@
     "stylus": ">= 0.0.1",
     "jade": ">= 0.0.1",
     "zlib": "~1.0.5",
-    "recaptcha": "~1.1.0",
+    "recaptcha": "~1.2.0",
     "ent": "0.0.4",
     "nodemailer": "~0.3.20",
     "mailcomposer": "~0.1.14",

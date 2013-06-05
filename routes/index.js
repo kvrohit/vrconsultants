@@ -2,14 +2,14 @@ var ent = require('ent'),
     Recaptcha = require('recaptcha').Recaptcha,
     nodemailer = require("nodemailer");
 
-var PUBLIC_KEY = 'PUBLIC_KEY',
-    PRIVATE_KEY = 'PRIVATE_KEY';
+var PUBLIC_KEY = '6Lfrv9MSAAAAADbIfJN1HmYX28RthdxgOINzKeYV',
+    PRIVATE_KEY = '6Lfrv9MSAAAAAGD7BEuMF_WcaJBwyHhFyAsxaC0-';
 
 var smtpTransport = nodemailer.createTransport("SMTP",{
   service: "Gmail",
   auth: {
-    user: "username",
-    pass: "password"
+    user: "vrconsultants.net@gmail.com",
+    pass: new Buffer('eGptZSo2Njg4', 'base64').toString('ascii')
   }
 });
 
@@ -31,8 +31,8 @@ var renderIndex = function(req, res, recaptcha) {
 
 var sendmail = function(data) {
   smtpTransport.sendMail({
-    from: "from@example.com",
-    to: "to@example.com",
+    from: "Administrator <vrconsultants.net@gmail.com>",
+    to: "Viswanath R Rao <viswanath.rao@vrconsultants.net>",
     replyTo: data.username + " <" + data.email + ">",
     subject: "Enquery from " + data.username,
     text: data.message
@@ -85,6 +85,7 @@ exports.sendmessage = function(req, res) {
     }
     else {
       req.flash('error', 'Sorry, your message could not be recorded. Please try again');
+      console.log(error_code);
       res.redirect('/');
     }
   });
